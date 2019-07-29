@@ -18,9 +18,9 @@ function listen() {
 
 // GETBUTTONVALUE MEGA FUNCTION - FEATURES NUMBER, ALLCLEAR, CLEAR, CALCULATE, STORENUMBER FUNCTIONS in IF/ELSE IF/ELSE STATEMENT where event.target.value corresponds to button value pressed, which runs corresponding function
 // let button equal to event.target.value
-function getButtonValue () {
+function getButtonValue() {
     let button = event.target.value;
-    if (!NaN || button === '.') {
+    if (!isNaN(button) || button === '.') {
         number();
     } else if (button === 'AC') {
         allClear();
@@ -48,9 +48,17 @@ function number(button) {
 
 
 // ALLCLEAR FUNCTION that empties numString, empties numArray, sets display at '0'
-
+function allClear() {
+    numString = '';
+    numArray = [];
+    display.value = 0;
+}
 
 // CLEAR FUNCTION that empties numString and sets display at '0'
+function clear() {
+    numString = '';
+    display.value = 0;
+}
 
 // STORENUMBER FUNCTION with button as argument
 // IF numString is empty and numArray length is 0 exit
