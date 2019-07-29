@@ -3,8 +3,8 @@
 // create empty array to hold all values entered
 // create let display equal to document.getElementById, argument is 'display'
 
-var newString = '';
-var newArray = [];
+var numString = '';
+var numArray = [];
 let display = document.getElementById('display');
 
 // CALL LISTEN FUNCTION
@@ -20,21 +20,31 @@ function listen() {
 // let button equal to event.target.value
 function getButtonValue () {
     let button = event.target.value;
-    if (!NaN(button) || button === '.') {
+    if (!NaN || button === '.') {
         number();
     } else if (button === 'AC') {
         allClear();
     } else if (button === 'CE') {
         clear();
-    } else if () {
+    } else if (button === '=') {
         calculate();
-    } else () {
+    } else {
         storeNumber(button);
     }
 }
 
 
 // NUMBER FUNCTION to string together numbers. IF (decimal point button used exit)/ELSE IF ('0' button used exit)/ELSE STATEMENT (add button to numString and display numString)
+function number(button) {
+    if (button === '.' && numString.includes('.')) {
+        return;
+    } else if (numString.charAt[0] === 0 && button === 0) {
+        return;
+    } else {
+        numString += button;
+        display.value = numString;
+    }
+}
 
 
 // ALLCLEAR FUNCTION that empties numString, empties numArray, sets display at '0'
