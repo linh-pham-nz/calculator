@@ -1,0 +1,72 @@
+body, html {
+    width:100%;
+    background-color: rgb(0, 179, 179);
+}
+
+.title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 40px;
+}
+
+.calculator {
+    width: 400px;
+    height: 650px;
+    background-color: rgb(230, 230, 255);
+    margin: 80px;
+    border-radius: 15px;
+    text-align: center;
+    position: center;
+}
+
+.display[type="text"] {
+        background-color: rgb(204, 204, 255);
+        width: 85%;
+        font-size: 50px;
+        direction: rtl;
+        font-family: 'Chakra Petch', sans-serif;
+        padding-right: 5px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+    }
+
+.row {
+        display: block;
+    }
+
+.button {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(75, 76, 75);
+        color: white;
+        font-size: 25px;
+        border-radius: 10px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 5px;
+        outline: 1px;
+    }
+
+.control {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(255, 102, 255);
+        color: white;
+        font-size: 25px;
+        border-radius: 10px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 5px;
+        outline: 1px;
+    }
+
+.button.special {
+        background-color: rgb(0, 255, 153);
+    }
+.button.wide {
+        width: 166px;
+        background-color: rgb(0, 255, 153);
+    }
+
+.control.wide {
+        width: 166px;
+    }
