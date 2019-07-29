@@ -33,12 +33,12 @@ function getButtonValue() {
     }
 }
 
-
 // NUMBER FUNCTION to string together numbers. IF (decimal point button used exit)/ELSE IF ('0' button used exit)/ELSE STATEMENT (add button to numString and display numString)
-function number(button) {
+function number() {
+    let button = event.target.value;
     if (button === '.' && numString.includes('.')) {
         return;
-    } else if (numString.charAt[0] === 0 && button === 0) {
+    } else if (numString.charAt(0) === 0 && button === 0 && numString.length === 1) {
         return;
     } else {
         numString += button;
@@ -63,6 +63,15 @@ function clear() {
 // STORENUMBER FUNCTION with button as argument
 // IF numString is empty and numArray length is 0 exit
 // ELSE push numString to end of numArray, push button to end of numArray, set numString as empty
+function storeNumber(button) {
+    if (numString === '' && numArray.length === 0) {
+        return;
+    } else {
+        numArray.push(numString);
+        numArray.push(button);
+        numString = '';      
+    }
+}
 
 
 // CALCULATE FUNCTION
@@ -74,7 +83,29 @@ function clear() {
 // display currentNumber
 // currentNumber converted to JSON to equal numberString variable
 // empty numArray 
-
+function calculate() {
+    numArray.push(numString);
+    let currentNumber = Number(numArray[0]);    
+    for (var i = 0; i < numArray.length; i++) {
+        let nextNumber = Number(numArray[i+1]);
+        let symbol = numArray[i];
+        if (symbol === '+') {
+            currentNumber += nextNumber;
+        } else if (symbol === '-') {
+            currentNumber -= nextNumber;
+        } else if (symbol === '*') {
+            currentNumber *= nextNumber;
+        } else if (symbol === '/') {
+            currentNumber /= nextNumber;
+        }
+        if (currentNumber < 0) {
+            currentNumber = '-' + Math.abs(currentNumber);
+        }
+    }
+    display.value = currentNumber;
+    numString = JSON.stringify(currentNumber);
+    numArray = [];
+}
 
 
 
