@@ -3,9 +3,9 @@
 // create empty array to hold all values entered
 // create let display equal to document.getElementById, argument is 'display'
 
-var newString = ''
-var newArray = []
-let display = document.getElementById('display')
+var newString = '';
+var newArray = [];
+let display = document.getElementById('display');
 
 // CALL LISTEN FUNCTION
 listen()
@@ -13,11 +13,25 @@ listen()
 // LISTEN FUNCTION
 // create listen function that listens for 'click' of getButtonValue function
 function listen() {
-    addEventListener('click', getButtonValue)
+    addEventListener('click', getButtonValue);
 }
 
 // GETBUTTONVALUE MEGA FUNCTION - FEATURES NUMBER, ALLCLEAR, CLEAR, CALCULATE, STORENUMBER FUNCTIONS in IF/ELSE IF/ELSE STATEMENT where event.target.value corresponds to button value pressed, which runs corresponding function
 // let button equal to event.target.value
+function getButtonValue () {
+    let button = event.target.value;
+    if (!NaN(button) || button === '.') {
+        number();
+    } else if (button === 'AC') {
+        allClear();
+    } else if (button === 'CE') {
+        clear();
+    } else if () {
+        calculate();
+    } else () {
+        storeNumber(button);
+    }
+}
 
 
 // NUMBER FUNCTION to string together numbers. IF (decimal point button used exit)/ELSE IF ('0' button used exit)/ELSE STATEMENT (add button to numString and display numString)
